@@ -18,8 +18,10 @@ keyrings.alt==5.0.1
 markdown-it-py==3.0.0
 mdurl==0.1.2
 more-itertools==10.2.0
+mysqlclient==2.1.0
 nh3==0.2.17
 pkginfo==1.10.0
+pymysql
 pycparser==2.22
 Pygments==2.17.2
 pytz==2024.1
