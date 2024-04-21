@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Register-form.css' %}">
+</head>
+
+<body>
+    <h1>Welcome to Delish Clinic</h1>
+    <p>We're delighted to assist you. To schedule your appointment, kindly provide your details below and select your preferred date from the available options. Please note that our clinic operates on Mondays, Wednesdays, and Fridays only, and appointments can be booked up to one week in advance.</p>
+    <p><strong>Doctor Name: Delish Raymond - Physician</strong></p>
+    
+    <!-- "Know Your BMI" Button -->
+    <a href="{% url 'bmiUI' %}" class="btn btn-primary">Know Your BMI</a>
+    
+    <!-- Display remaining appointments -->
+    <p>Number of appointments left for this week : {{ remainingnumberof_appointments }}</p>
+    
+    <!-- Form section -->
+    <div class="rf-register-form">
+        <!-- Form for adding new appointments -->
+        <form method="post" action="{% url 'book_appointment' %}">
+            {% csrf_token %}
+            <!-- Form fields for adding new appointment -->
+            <h2>Patient Details</h2>
+            <div class="rf-input-container">
+                <i class="fa fa-star fa fa-user rf-icon"></i>
+                <input class="form-control rf-input-field" type="text" name="name" placeholder="Name" required>
+            </div>
+            <div class="rf-input-container">
+                <i class="fa fa-star fa fa-envelope rf-icon"></i>
+                <input class="form-control rf-input-field" type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <h2>Appointment Day</h2>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="appointment_day" id="monday" value="Monday" required>
+                <label class="form-check-label" for="monday">Monday</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="appointment_day" id="wednesday" value="Wednesday" required>
+                <label class="form-check-label" for="wednesday">Wednesday</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="appointment_day" id="friday" value="Friday" required>
+                <label class="form-check-label" for="friday">Friday</label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Book Appointment</button>
+        </form>
+    </div>
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
+

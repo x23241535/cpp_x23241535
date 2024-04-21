@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Register-form.css' %}">
+</head>
+
+<body>
+    <!-- Display list of appointments -->
+    <div class="container mt-5">
+        <h2>Appointments for this week</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Appointment Day</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for appointment in appointments %}
+                                <tr>
+                                    <td>{{ appointment.name }}</td>
+                                    <td>{{ appointment.email }}</td>
+                                    <td>{{ appointment.appointment_day }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="3">No appointments booked yet.</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
