@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
-#Model for the appointment
+#Model for the Appointment
 class Appointment(models.Model):
     DAY_CHOICES = (
         ('Monday', 'Monday'),
