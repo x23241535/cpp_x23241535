@@ -1,5 +1,4 @@
 annx23241535-pkg-annjojo==0.0.1
-appointment-x23241535==0.0.1
 backports.tarfile==1.1.0
 certifi==2024.2.2
 cffi==1.16.0
