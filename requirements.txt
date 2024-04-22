@@ -21,9 +21,9 @@ more-itertools==10.2.0
 mysqlclient==2.1.0
 nh3==0.2.17
 pkginfo==1.10.0
-pymysql
 pycparser==2.22
 Pygments==2.17.2
+PyMySQL==1.1.0
 pytz==2024.1
 readme_renderer==43.0
 requests==2.31.0
